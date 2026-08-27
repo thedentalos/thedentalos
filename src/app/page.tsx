@@ -7,7 +7,7 @@ import { PricingPreviewSection } from "@/components/sections/PricingPreviewSecti
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 import { TechDemoSection } from "@/components/sections/TechDemoSection";
 import { Ticker } from "@/components/ui/Ticker";
-import { homeMetadata } from "@/config/seo";
+import { homeMetadata, localBusinessSchema } from "@/config/seo";
 
 export const metadata: Metadata = homeMetadata;
 
@@ -25,6 +25,14 @@ const tickerItems = [
 export default function HomePage() {
   return (
     <>
+      {/* JSON-LD: LocalBusiness (homepage only) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema()),
+        }}
+      />
+
       <HeroSection
         eyebrow="For dental clinics in Pakistan"
         headline="Every empty chair costs your clinic PKR 8,000–15,000 a day."
