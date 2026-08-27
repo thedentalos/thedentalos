@@ -1,65 +1,58 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { TrustBar } from "@/components/sections/TrustBar";
+import { ProblemSolutionSection } from "@/components/sections/ProblemSolutionSection";
+import { StatsCounterSection } from "@/components/sections/StatsCounterSection";
+import { PricingPreviewSection } from "@/components/sections/PricingPreviewSection";
+import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
+import { TechDemoSection } from "@/components/sections/TechDemoSection";
+import { Ticker } from "@/components/ui/Ticker";
+import { homeMetadata } from "@/config/seo";
 
-export default function Home() {
+export const metadata: Metadata = homeMetadata;
+
+const tickerItems = [
+  "5 Professional Video Ads",
+  "10 Creative Image Ads",
+  "Social Media Management",
+  "Paid Ad Boosting & Optimization",
+  "Website, SEO & Hosting",
+  "Admin Panel & Scheduling",
+  "Patient Conferencing App",
+  "WhatsApp Automation",
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <HeroSection
+        eyebrow="For dental clinics in Pakistan"
+        headline="Every empty chair costs your clinic PKR 8,000–15,000 a day."
+        subhead="Patients forget appointments. Your Google listing is invisible. Follow-ups fall through the cracks. DentalOS automates your reminders, bookings, and online presence — so your chairs stay full without you lifting a finger."
+        primaryCta={{ label: "Book a Free Audit", href: "/contact" }}
+        secondaryCta={{ label: "See how it works →", href: "/how-it-works" }}
+      />
+
+      <TrustBar />
+
+      <div className="relative overflow-hidden border-y border-line bg-white py-6">
+        <div className="pointer-events-none absolute -left-8 top-6 h-32 w-32 rounded-full bg-teal-tint/60 blur-2xl animate-float" />
+        <div className="pointer-events-none absolute -right-8 bottom-6 h-32 w-32 rounded-full bg-teal-tint/50 blur-2xl animate-float-delayed" />
+        <Ticker items={tickerItems} />
+      </div>
+
+      <ProblemSolutionSection />
+
+      <StatsCounterSection />
+
+      <TechDemoSection />
+
+      <PricingPreviewSection />
+
+      <FinalCtaBand
+        headline="Ready to stop losing patients to a missed reminder?"
+        cta={{ label: "Book a Free Audit", href: "/contact" }}
+      />
+    </>
   );
 }
