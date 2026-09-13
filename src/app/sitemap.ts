@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/config/blog-posts";
+import { serviceLocations } from "@/config/locations";
 import { siteConfig } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -14,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/pricing`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.9,
@@ -57,5 +64,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  const locationRoutes = serviceLocations.map((location) => ({
+    url: `${baseUrl}/dental-clinic-marketing/${location.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: location.slug === "pakistan" ? 0.8 : 0.7,
+  }));
+
+  return [...staticRoutes, ...locationRoutes, ...blogRoutes];
 }

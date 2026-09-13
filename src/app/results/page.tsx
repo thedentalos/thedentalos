@@ -4,6 +4,7 @@ import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { caseStudies } from "@/config/case-studies";
 import { resultsMetadata } from "@/config/seo";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = resultsMetadata;
 
@@ -15,7 +16,7 @@ export default function ResultsPage() {
         <div className="mx-auto max-w-4xl px-4 py-10 text-center sm:px-5 md:py-20">
           <AnimatedSection>
             <h1 className="font-display text-3xl font-medium text-ink md:text-5xl">
-              What clinics see after working with us
+              How we help clinics grow
             </h1>
           </AnimatedSection>
         </div>
@@ -33,7 +34,7 @@ export default function ResultsPage() {
           ) : (
             <div className="rounded-2xl border border-dashed border-line bg-white p-8 text-center sm:p-12">
               <h2 className="font-display text-xl font-medium text-ink sm:text-2xl">
-                Case studies coming soon
+                Case studies in progress
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                 We&rsquo;re working with our first clinics and will publish real
@@ -48,7 +49,7 @@ export default function ResultsPage() {
 
       <FinalCtaBand
         headline="Want to be our first published case study?"
-        cta={{ label: "Book a Free Audit", href: "/contact" }}
+        cta={{ label: "Chat on WhatsApp", href: siteConfig.whatsappLink }}
       />
     </>
   );

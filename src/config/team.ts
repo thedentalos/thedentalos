@@ -16,17 +16,17 @@ export const teamMembers: TeamMember[] = [
     image: "/images/mustafa.jpeg",
   },
   {
-    name: "Zaid Masood",
+    name: "Kaif Anwar",
     role: "Growth & Sales Lead",
     specialty: "Marketing & Sales",
     bio: "Owns growth and client relationships — plans a clinic's marketing strategy, video and image ads, and makes sure every rupee of ad spend works harder to fill chairs.",
-    image: "/images/zaid.jpeg",
+    image: "/images/kaif.jpeg",
   },
   {
-    name: "Kaif Anwar",
+    name: "Zaid Masood",
     role: "Marketing Lead",
     specialty: "Marketing & Sales",
     bio: "Runs social media, ad campaigns, and day-to-day client communication — turning a clinic's online presence into booked appointments and long-term patients.",
-    image: "/images/kaif.jpeg",
+    image: "/images/zaid.jpeg",
   },
 ];

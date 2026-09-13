@@ -1,4 +1,5 @@
 import type { PricingPlan, BillingOption } from "@/types";
+import { siteConfig } from "./site";
 
 export const billingOptions: BillingOption[] = [
   { id: "monthly", label: "Monthly", months: 1, discountPercent: 0 },
@@ -20,8 +21,8 @@ export const pricingPlans: PricingPlan[] = [
     ],
     featured: false,
     note: "A one-time audit to pinpoint exactly what's costing you patients. No commitment beyond the report.",
-    ctaText: "Book the Audit",
-    ctaHref: "/contact",
+    ctaText: "Chat on WhatsApp",
+    ctaHref: siteConfig.whatsappLink,
     oneTime: true,
   },
   {
@@ -52,8 +53,8 @@ export const pricingPlans: PricingPlan[] = [
     ],
     featured: true,
     note: "Unmatched value — boost patients, reduce operational burden, and get free tech.",
-    ctaText: "Contact Us Now",
-    ctaHref: "/contact",
+    ctaText: "Chat on WhatsApp",
+    ctaHref: siteConfig.whatsappLink,
   },
 ];
 

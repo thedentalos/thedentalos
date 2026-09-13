@@ -47,15 +47,18 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href={siteConfig.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-white/60 no-underline hover:text-white transition-colors"
-                >
-                  <MessageCircle className="h-4 w-4 text-coral" strokeWidth={1.5} />
-                  WhatsApp
-                </a>
+                {siteConfig.contactNumbers.map((number, index) => (
+                  <a
+                    key={number}
+                    href={`https://wa.me/${number.slice(1)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-white/60 no-underline hover:text-white transition-colors"
+                  >
+                    <MessageCircle className="h-4 w-4 text-coral" strokeWidth={1.5} />
+                    WhatsApp {index + 1}: {number}
+                  </a>
+                ))}
               </li>
               <li>
                 <a
@@ -68,7 +71,7 @@ export function Footer() {
               </li>
               <li className="inline-flex items-center gap-2 text-sm text-white/60">
                 <MapPin className="h-4 w-4 text-coral" strokeWidth={1.5} />
-                {siteConfig.address}
+                {siteConfig.location}
               </li>
             </ul>
 
