@@ -4,6 +4,7 @@ import { TechDemoSection } from "@/components/sections/TechDemoSection";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { howItWorksMetadata } from "@/config/seo";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = howItWorksMetadata;
 
@@ -31,7 +32,7 @@ export default function HowItWorksPage() {
       <AnimatedSection>
         <FinalCtaBand
           headline="Ready to start with a free audit?"
-          cta={{ label: "Book a Free Audit", href: "/contact" }}
+          cta={{ label: "Chat on WhatsApp", href: siteConfig.whatsappLink }}
         />
       </AnimatedSection>
     </>

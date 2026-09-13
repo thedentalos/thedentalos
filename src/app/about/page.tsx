@@ -78,9 +78,9 @@ export default function AboutPage() {
                 than any amount of generic marketing ever would.
               </p>
               <p>
-                We&rsquo;re based in Islamabad and work with clinics across Pakistan
-                — single-doctor practices, multi-branch groups, and everything
-                in between.
+                Our team operates from Islamabad and works with clinics across
+                Pakistan — single-doctor practices, multi-branch groups, and
+                everything in between.
               </p>
             </div>
           </div>

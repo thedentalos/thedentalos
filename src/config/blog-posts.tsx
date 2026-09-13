@@ -48,8 +48,9 @@ export const blogPosts: BlogPost[] = [
           You don’t need any software to begin. A simple WhatsApp broadcast
           list and a message template are enough for the first few weeks. If you
           want full automation — reminders that send themselves based on
-          your booking calendar — that's where our WhatsApp automation comes
-          in. <a href="/pricing">See our pricing plans</a> to learn how we set
+          your booking calendar — that&rsquo;s where our WhatsApp automation comes
+          in. <a href="/services">Explore our WhatsApp automation and clinic growth services</a>{" "}
+          or <a href="/pricing">see our pricing plans</a> to learn how we set
           this up for clinics in as little as two weeks.
         </p>
       </>),
@@ -113,6 +114,7 @@ export const blogPosts: BlogPost[] = [
 
         <p>
           If this sounds like more than you have time for,{" "}
+          <a href="/services">see how our clinic growth services work</a> or{" "}
           <a href="/contact">book a free audit</a> and we&rsquo;ll review your
           listing for you &mdash; it&rsquo;s part of how we start with every
           clinic.
@@ -164,7 +166,8 @@ export const blogPosts: BlogPost[] = [
         </p>
 
         <p>
-          <a href="/contact">Book a free audit</a> and we&rsquo;ll show you
+          <a href="/services">Explore our WhatsApp automation services</a> or{" "}
+          <a href="/contact">book a free audit</a> and we&rsquo;ll show you
           exactly how many patients in your current records are due for a recall
           &mdash; and what it would look like to bring them back.
         </p>

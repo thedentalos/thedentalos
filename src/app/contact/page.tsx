@@ -19,8 +19,7 @@ export default function ContactPage() {
               Get in touch
             </h1>
             <p className="mt-3 text-base leading-relaxed text-ink-soft md:text-lg">
-              The fastest way to reach us is WhatsApp — usually respond within a
-              few hours.
+              Reach us on WhatsApp or phone every day from 10 AM to 8 PM.
             </p>
           </AnimatedSection>
         </div>
@@ -68,10 +67,22 @@ export default function ContactPage() {
                 <MessageCircle className="h-4 w-4 text-coral" strokeWidth={1.5} />
               </div>
               <div>
-                <p className="text-[10px] text-ink-soft sm:text-xs">WhatsApp</p>
-                <p className="text-xs font-medium text-ink sm:text-sm">
-                  {siteConfig.whatsappNumber}
+                <p className="text-[10px] text-ink-soft sm:text-xs">
+                  WhatsApp &amp; phone
                 </p>
+                <div className="space-y-1">
+                  {siteConfig.contactNumbers.map((number) => (
+                    <a
+                      key={number}
+                      href={`https://wa.me/${number.slice(1)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-xs font-medium text-teal no-underline hover:text-teal-light sm:text-sm"
+                    >
+                      {number}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -95,13 +106,20 @@ export default function ContactPage() {
                 <MapPin className="h-4 w-4 text-teal" strokeWidth={1.5} />
               </div>
               <div>
-                <p className="text-[10px] text-ink-soft sm:text-xs">Location</p>
+                <p className="text-[10px] text-ink-soft sm:text-xs">
+                  Operating location
+                </p>
                 <p className="text-xs font-medium text-ink sm:text-sm">
-                  {siteConfig.address}
+                  {siteConfig.location}
                 </p>
               </div>
             </div>
           </AnimatedSection>
+          <p className="mt-5 text-center text-xs text-ink-soft">
+            In-person clinic meetings are available in Islamabad and Sargodha
+            on Saturdays and Sundays. We support clinics across Pakistan
+            remotely.
+          </p>
         </div>
       </section>
     </>

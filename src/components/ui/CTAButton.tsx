@@ -44,6 +44,7 @@ export function CTAButton({
 }: CTAButtonProps) {
   const ref = useRef<HTMLAnchorElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
+  const isExternal = href.startsWith("http://") || href.startsWith("https://");
 
   function handleMouseMove(e: React.MouseEvent) {
     if (noMagnetic || !ref.current) return;
@@ -67,6 +68,8 @@ export function CTAButton({
       <MotionLink
         ref={ref}
         href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         className={cn(
           "relative inline-flex items-center justify-center gap-2 rounded-xl font-sans font-semibold no-underline overflow-hidden focus:outline-none focus:ring-2 focus:ring-coral/50 focus:ring-offset-2 transition-all duration-200",
           variantStyles[variant],
